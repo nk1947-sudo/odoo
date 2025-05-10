@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Tree/List View for work.report (list view definition) -->
+		<record id="view_work_report_list" model="ir.ui.view">
+			<field name="name">work.report.list</field>
+			<field name="model">work.report</field>
+			<field name="arch" type="xml">
+				<list string="Work Reports">
+					<field name="name"/>
+					<field name="employee_id"/>
+					<field name="date"/>
+					<!-- Add other fields of work.report to display in the list as needed -->
+				</list>
+			</field>
+		</record>
+		<!-- Form View for work.report -->
+		<record id="view_work_report_form" model="ir.ui.view">
+			<field name="name">work.report.form</field>
+			<field name="model">work.report</field>
+			<field name="arch" type="xml">
+				<form string="Work Report">
+					<sheet>
+						<group>
+							<!-- Fields of the work.report model -->
+							<field name="name" placeholder="Report Title" required="1"/>
+							<field name="employee_id"/>
+							<field name="date"/>
+						</group>
+						<group>
+							<!-- One2many field for work.report.line records -->
+							<field name="line_ids" nolabel="1">
+								<list string="Work Report Lines" editable="bottom">
+									<!-- Fields of work.report.line -->
+									<field name="name"/>
+									<!-- Description -->
+									<field name="project_id"/>
+									<!-- Project -->
+									<field name="task_id"/>
+									<!-- Task -->
+									<field name="hours"/>
+									<!-- Hours worked -->
+									<field name="billable"/>
+									<!-- Billable (yes/no) -->
+									<field name="notes"/>
+									<!-- Additional notes -->
+								</list>
+							</field>
+						</group>
+						<footer>
+							<button string="Submit" type="object" name="action_submit" class="btn-primary"/>
+							<button string="Cancel" class="btn-secondary" special="cancel"/>
+						</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!-- Search View for work.report -->
+		<record id="view_work_report_search" model="ir.ui.view">
+			<field name="name">work.report.search</field>
+			<field name="model">work.report</field>
+			<field name="arch" type="xml">
+				<search string="Work Reports">
+					<field name="name"/>
+					<field name="employee_id"/>
+					<field name="date"/>
+				</search>
+			</field>
+		</record>
+		<!-- Action for opening Work Reports (uses list and form views) -->
+		<record id="action_work_report" model="ir.actions.act_window">
+			<field name="name">Work Reports</field>
+			<field name="res_model">work.report</field>
+			<field name="view_mode">list,form</field>
+			<!-- Using 'list' instead of 'tree' for Odoo 18+ :contentReference[oaicite:5]{index=5} -->
+			<field name="view_id" ref="view_work_report_list"/>
+			<!-- default view (list) -->
+		</record>
+		<!-- Menu Items for Work Reports (adjust parent as appropriate) -->
+		<menuitem id="menu_work_report_root" name="Work Reports" sequence="10"/>
+		<menuitem id="menu_work_report" name="All Reports" parent="menu_work_report_root" action="action_work_report" sequence="1"/>
+	</data>
+</odoo>

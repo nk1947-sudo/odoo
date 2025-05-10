@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View for Category -->
+    <record id="view_work_report_category_tree" model="ir.ui.view">
+        <field name="name">work.report.category.tree</field>
+        <field name="model">work.report.category</field>
+        <field name="arch" type="xml">
+            <tree string="Categories">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_work_report_category_form" model="ir.ui.view">
+        <field name="name">work.report.category.form</field>
+        <field name="model">work.report.category</field>
+        <field name="arch" type="xml">
+            <form string="Category">
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="description" placeholder="Add a description..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action Window -->
+    <record id="action_work_report_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">work.report.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_work_report_category_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No categories found.
+            </p>
+            <p>
+                Create categories to organize work reports.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_work_report_categories"
+              name="Categories"
+              parent="menu_work_report_root"
+              action="action_work_report_category"
+              sequence="30"/>
+</odoo>

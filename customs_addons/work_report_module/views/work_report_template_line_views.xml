@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_work_report_template_line_form" model="ir.ui.view">
+        <field name="name">work.report.template.line.form</field>
+        <field name="model">work.report.template.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="template_id"/>
+                        <field name="name"/>
+                        <field name="project_id"/>
+                        <field name="task_id"/>
+                        <field name="billable"/>
+                        <field name="default_hours"/>
+                        <field name="notes"/>
+                        <field name="category_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_work_report_template_line_tree" model="ir.ui.view">
+        <field name="name">work.report.template.line.tree</field>
+        <field name="model">work.report.template.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="template_id"/>
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="task_id"/>
+                <field name="billable"/>
+                <field name="default_hours"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
