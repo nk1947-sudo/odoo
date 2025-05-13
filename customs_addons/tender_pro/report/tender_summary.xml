@@ -1,0 +1,22 @@
+<!-- report/tender_summary.xml -->
+<odoo>
+    <template id="report_tender_summary_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>Tender Summary</h2>
+                    <p><strong>Title:</strong> <t t-esc="doc.title"/></p>
+                    <p><strong>Reference:</strong> <t t-esc="doc.reference"/></p>
+                    <p><strong>Department:</strong> <t t-esc="doc.department_id.name"/></p>
+                    <p><strong>Category:</strong> <t t-esc="doc.category"/></p>
+                    <p><strong>Estimated Value:</strong> ₹<t t-esc="doc.estimated_value"/></p>
+                    <p><strong>Deadline:</strong> <t t-esc="doc.deadline"/></p>
+                    <p><strong>Status:</strong> <t t-esc="doc.status"/></p>
+                    <hr/>
+                    <h4>Description</h4>
+                    <p><t t-esc="doc.description"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

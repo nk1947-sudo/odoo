@@ -1,0 +1,9 @@
+<!-- views/assets.xml -->
+<odoo>
+    <template id="assets_backend" name="Dawell Tender Pro Assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/tender_pro/static/src/css/tender_dashboard.css"/>
+            <script type="text/javascript" src="/tender_pro/static/src/js/tender_dashboard.js"/>
+        </xpath>
+    </template>
+</odoo>

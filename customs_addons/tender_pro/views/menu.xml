@@ -1,0 +1,10 @@
+<!-- views/menu.xml -->
+<odoo>
+    <menuitem id="menu_tender_root" name="Tender Management" sequence="1" />
+    
+    <menuitem id="menu_tender_main" name="Tenders" parent="menu_tender_root" sequence="1" />
+    <menuitem id="menu_tender_bids" name="Bids" parent="menu_tender_root" sequence="2" />
+    <menuitem id="menu_tender_department" name="Departments" parent="menu_tender_root" sequence="3" />
+    <menuitem id="menu_tender_sync" name="Portal Sync Logs" parent="menu_tender_root" sequence="4" />
+    <menuitem id="menu_tender_ai" name="AI Insights" parent="menu_tender_root" sequence="5" />
+</odoo>

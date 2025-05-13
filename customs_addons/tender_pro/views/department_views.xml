@@ -1,0 +1,65 @@
+<!-- views/department_views.xml -->
+<odoo>
+    <!-- List View -->
+    <record id="view_list_tender_department" model="ir.ui.view">
+        <field name="name">tender.department.list</field>
+        <field name="model">tender.department</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="code"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_kanban_tender_department" model="ir.ui.view">
+        <field name="name">tender.department.kanban</field>
+        <field name="model">tender.department</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong>
+                            <div>Code: <field name="code"/></div>
+                            <div>Description: <field name="description"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_form_tender_department" model="ir.ui.view">
+        <field name="name">tender.department.form</field>
+        <field name="model">tender.department</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Department">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action (Fixed view_mode to include tree) -->
+    <record id="action_tender_department" model="ir.actions.act_window">
+        <field name="name">Departments</field>
+        <field name="res_model">tender.department</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- Menuitem -->
+    <menuitem id="menu_action_tender_department"
+              name="Departments"
+              parent="menu_tender_department"
+              action="action_tender_department"/>
+</odoo>

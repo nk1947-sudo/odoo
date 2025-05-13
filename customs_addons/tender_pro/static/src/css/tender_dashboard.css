@@ -1,0 +1,43 @@
+/* tender_dashboard.css */
+
+.o_dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.o_dashboard .kpi-card {
+    flex: 1 1 200px;
+    min-width: 220px;
+    max-width: 320px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.o_dashboard .kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.o_dashboard .kpi-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.o_dashboard .kpi-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.o_dashboard .kpi-footer {
+    font-size: 12px;
+    color: #888;
+    margin-top: 6px;
+}

@@ -1,0 +1,12 @@
+<!-- report/report_template.xml -->
+<odoo>
+    <report
+        id="report_tender_summary"
+        model="tender.management"
+        string="Tender Summary Report"
+        report_type="qweb-pdf"
+        name="dawell_tender_pro.report_tender_summary_document"
+        file="dawell_tender_pro.report_tender_summary_document"
+        print_report_name="(object.title or 'Tender') + '_Summary'"
+    />
+</odoo>

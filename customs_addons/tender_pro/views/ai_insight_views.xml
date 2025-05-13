@@ -1,0 +1,46 @@
+<!-- views/ai_insight_views.xml -->
+<odoo>
+    <record id="view_list_tender_ai" model="ir.ui.view">
+        <field name="name">tender.ai.insight.list</field>
+        <field name="model">tender.ai.insight</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="tender_id"/>
+                <field name="win_probability"/>
+                <field name="recommended_bid"/>
+                <field name="analysis_date"/>
+                <field name="score"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_form_tender_ai" model="ir.ui.view">
+        <field name="name">tender.ai.insight.form</field>
+        <field name="model">tender.ai.insight</field>
+        <field name="arch" type="xml">
+            <form string="AI Insight">
+                <sheet>
+                    <group>
+                        <field name="tender_id"/>
+                        <field name="win_probability"/>
+                        <field name="recommended_bid"/>
+                        <field name="analysis_date"/>
+                        <field name="score"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tender_ai" model="ir.actions.act_window">
+        <field name="name">AI Insights</field>
+        <field name="res_model">tender.ai.insight</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_tender_ai"
+              name="AI Insights"
+              parent="menu_tender_ai"
+              action="action_tender_ai"/>
+</odoo>

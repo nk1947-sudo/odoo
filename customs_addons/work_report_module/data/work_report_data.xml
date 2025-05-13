@@ -1,8 +1,0 @@
-<odoo>
-    <record id="seq_work_report" model="ir.sequence">
-        <field name="name">Work Report</field>
-        <field name="code">work.report</field>
-        <field name="prefix">WR</field>
-        <field name="padding">5</field>
-    </record>
-</odoo>

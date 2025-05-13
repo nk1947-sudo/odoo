@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <record id="action_work_report_dashboard" model="ir.actions.client">
-        <field name="name">Work Report Dashboard</field>
-        <field name="tag">work_report_dashboard</field>
-    </record>
-</odoo>

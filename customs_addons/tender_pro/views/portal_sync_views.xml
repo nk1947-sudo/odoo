@@ -1,0 +1,46 @@
+<!-- views/portal_sync_views.xml -->
+<odoo>
+    <record id="view_tree_tender_sync" model="ir.ui.view">
+        <field name="name">tender.portal.sync.list</field>
+        <field name="model">tender.portal.sync</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="portal"/>
+                <field name="sync_date"/>
+                <field name="items_synced"/>
+                <field name="duration"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_form_tender_sync" model="ir.ui.view">
+        <field name="name">tender.portal.sync.form</field>
+        <field name="model">tender.portal.sync</field>
+        <field name="arch" type="xml">
+            <form string="Portal Sync Log">
+                <sheet>
+                    <group>
+                        <field name="portal"/>
+                        <field name="sync_date"/>
+                        <field name="items_synced"/>
+                        <field name="duration"/>
+                        <field name="status"/>
+                        <field name="message"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tender_sync" model="ir.actions.act_window">
+        <field name="name">Portal Sync Logs</field>
+        <field name="res_model">tender.portal.sync</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_action_tender_sync"
+              name="Portal Sync"
+              parent="menu_tender_sync"
+              action="action_tender_sync"/>
+</odoo>
