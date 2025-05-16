@@ -36,7 +36,7 @@
     <record id="action_tender_ai" model="ir.actions.act_window">
         <field name="name">AI Insights</field>
         <field name="res_model">tender.ai.insight</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,form</field>
     </record>
 
     <menuitem id="menu_action_tender_ai"

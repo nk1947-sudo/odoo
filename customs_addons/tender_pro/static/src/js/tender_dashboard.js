@@ -1,39 +1,16 @@
 /** tender_dashboard.js **/
+/** @odoo-module **/
 
-odoo.define('dawell_tender_pro.dashboard', function (require) {
-    "use strict";
+import { Component } from "@odoo/owl";
+import { registry } from "@web/core/registry";
 
-    const publicWidget = require('web.public.widget');
+export class TenderDashboard extends Component {
+    setup() {
+        console.log("TenderDashboard component loaded!");
+    }
 
-    publicWidget.registry.TenderKPIDashboard = publicWidget.Widget.extend({
-        selector: '.o_dashboard',
-        start: function () {
-            console.log("Tender Dashboard Widget Loaded.");
-            this._renderKPIStats();
-        },
+    static template = "tender_pro.TenderDashboard";
+}
 
-        _renderKPIStats: function () {
-            // Example logic — in practice this would fetch from server or model
-            const kpis = [
-                { title: "Active Tenders", value: "42", footer: "Updated today" },
-                { title: "Submitted Bids", value: "18", footer: "This month" },
-                { title: "Win Rate", value: "68%", footer: "Last 30 days" },
-                { title: "Pending Deadlines", value: "9", footer: "Next 7 days" },
-            ];
-
-            const container = this.$el;
-            container.empty();
-
-            kpis.forEach(kpi => {
-                const card = $(`
-                    <div class="kpi-card">
-                        <div class="kpi-title">${kpi.title}</div>
-                        <div class="kpi-value">${kpi.value}</div>
-                        <div class="kpi-footer">${kpi.footer}</div>
-                    </div>
-                `);
-                container.append(card);
-            });
-        }
-    });
-});
+// Register the component
+registry.category("actions").add("tender_dashboard_widget", TenderDashboard);

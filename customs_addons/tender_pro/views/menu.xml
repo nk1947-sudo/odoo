@@ -1,7 +1,15 @@
-<!-- views/menu.xml -->
 <odoo>
+    <!-- Root Menu -->
     <menuitem id="menu_tender_root" name="Tender Management" sequence="1" />
-    
+
+    <!-- Dashboard Menu -->
+    <menuitem id="menu_tender_dashboard_root"
+              name="Dashboard"
+              parent="menu_tender_root"
+              sequence="0"
+              action="action_tender_dashboard"/>
+
+    <!-- Other Submenus -->
     <menuitem id="menu_tender_main" name="Tenders" parent="menu_tender_root" sequence="1" />
     <menuitem id="menu_tender_bids" name="Bids" parent="menu_tender_root" sequence="2" />
     <menuitem id="menu_tender_department" name="Departments" parent="menu_tender_root" sequence="3" />

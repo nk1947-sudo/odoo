@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tender_manager,tender.management,model_tender_management,group_tender_manager,1,1,1,1
-access_tender_bid,tender.bid,model_tender_bid,group_bid_analyst,1,1,1,0
-access_tender_department,tender.department,model_tender_department,base.group_user,1,0,0,0
-access_portal_sync,tender.portal.sync,model_tender_portal_sync,group_tender_manager,1,0,0,0
-access_ai_insight,tender.ai.insight,model_tender_ai_insight,group_tender_manager,1,1,1,0
-access_attachment,tender.attachment,model_tender_attachment,base.group_user,1,0,0,0
+access_tender_management,tender.management,model_tender_management,,1,1,1,1
+access_tender_bid,tender.bid,model_tender_bid,,1,1,1,1
+access_tender_department,tender.department,model_tender_department,,1,1,1,1
+access_tender_attachment,tender.attachment,model_tender_attachment,,1,1,1,1
+access_tender_portal_sync,tender.portal.sync,model_tender_portal_sync,,1,1,1,1
+access_tender_ai_insight,tender.ai.insight,model_tender_ai_insight,,1,1,1,1
+

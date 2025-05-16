@@ -4,6 +4,15 @@ import json
 from ..ai_services.ocr_engine import OcrEngine
 from ..ai_services.bid_predictor import BidPredictor
 from ..ai_services.nlp_extractor import NlpExtractor
+from odoo import http
+from odoo.http import request
+
+#class TenderDashboard(http.Controller):
+
+  #  @http.route('/tender/dashboard', type='http', auth='user', website=False)
+ #   def tender_dashboard(self, **kw):
+   #     return request.render('tender_pro.tender_dashboard_template', {})
+#
 
 class TenderAIApi(http.Controller):
 

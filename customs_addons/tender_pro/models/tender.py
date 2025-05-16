@@ -34,8 +34,9 @@ class Tender(models.Model):
     company_id = fields.Many2one('res.company', default=lambda self: self.env.company, index=True)
     ai_score_id = fields.Many2one('tender.ai.insight', string='AI Insight')
 
-    @api.model
-    def create(self, vals):
-        if vals.get('reference', 'New') == 'New':
-            vals['reference'] = self.env['ir.sequence'].next_by_code('tender.management') or 'New'
-        return super(Tender, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('reference', 'New') == 'New':
+                vals['reference'] = self.env['ir.sequence'].next_by_code('tender.management') or 'New'
+        return super().create(vals_list)

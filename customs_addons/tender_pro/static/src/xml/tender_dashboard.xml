@@ -1,0 +1,56 @@
+<templates id="template" xml:space="preserve">
+  <t t-name="tender_pro.TenderDashboard">
+    <div class="container my-4">
+      <h2 class="text-center mb-4">Tender Management Dashboard</h2>
+
+      <div class="row text-center mb-5">
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Total Tenders</h5>
+            <h3><t t-esc="total_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Active</h5>
+            <h3><t t-esc="active_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Submitted</h5>
+            <h3><t t-esc="submitted_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Won</h5>
+            <h3><t t-esc="won_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Lost</h5>
+            <h3><t t-esc="lost_tenders"/></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card p-3">
+            <h5 class="text-center">Tenders by Category</h5>
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card p-3">
+            <h5 class="text-center">Tenders by Status</h5>
+            <canvas id="statusChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

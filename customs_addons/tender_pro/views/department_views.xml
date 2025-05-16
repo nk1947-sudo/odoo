@@ -54,7 +54,7 @@
     <record id="action_tender_department" model="ir.actions.act_window">
         <field name="name">Departments</field>
         <field name="res_model">tender.department</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">form,kanban</field>
     </record>
 
     <!-- Menuitem -->

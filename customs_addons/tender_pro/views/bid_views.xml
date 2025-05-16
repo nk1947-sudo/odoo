@@ -1,26 +1,11 @@
 <!-- views/bid_views.xml -->
 <odoo>
-    
-    
-    <record id="view_tree_tender_bid" model="ir.ui.view">
-        <field name="name">tender.bid.list</field>
-        <field name="model">tender.bid</field>
-        <field name="type">list</field> <!-- Changed the type from tree to list -->
-        <field name="arch" type="xml">
-            <list>
-                <field name="tender_id"/>
-                <field name="bidder_name"/>
-                <field name="bid_amount"/>
-                <field name="submitted_on"/>
-                <field name="outcome"/>
-            </list>
-        </field>
-    </record>
-    
+
+    <!-- Kanban View -->
     <record id="view_kanban_tender_bid" model="ir.ui.view">
         <field name="name">tender.bid.kanban</field>
         <field name="model">tender.bid</field>
-        <field name="type">kanban</field> <!-- Set the type to kanban -->
+        <field name="type">kanban</field>
         <field name="arch" type="xml">
             <kanban>
                 <templates>
@@ -37,10 +22,11 @@
         </field>
     </record>
 
+    <!-- Form View -->
     <record id="view_form_tender_bid" model="ir.ui.view">
         <field name="name">tender.bid.form</field>
         <field name="model">tender.bid</field>
-        <field name="type">form</field> <!-- Explicitly set the type -->
+        <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Tender Bid">
                 <sheet>
@@ -56,9 +42,11 @@
         </field>
     </record>
 
+    <!-- Action -->
     <record id="action_tender_bid" model="ir.actions.act_window">
         <field name="name">Tender Bids</field>
         <field name="res_model">tender.bid</field>
-        <field name="view_mode">kanban,form</field> <!-- Use kanban and form views -->
+        <field name="view_mode">kanban,form</field>
     </record>
+
 </odoo>

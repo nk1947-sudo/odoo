@@ -36,7 +36,7 @@
     <record id="action_tender_sync" model="ir.actions.act_window">
         <field name="name">Portal Sync Logs</field>
         <field name="res_model">tender.portal.sync</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">form</field>
     </record>
 
     <menuitem id="menu_action_tender_sync"

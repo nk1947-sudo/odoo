@@ -1,0 +1,88 @@
+<odoo>
+  <template id="TenderDashboard" name="Tender Dashboard">
+    <div class="container my-4">
+      <h2 class="text-center mb-4">Tender Management Dashboard</h2>
+
+      <!-- KPI Cards -->
+      <div class="row text-center mb-5">
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Total Tenders</h5>
+            <h3><span t-esc="total_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Active</h5>
+            <h3><span t-esc="active_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Submitted</h5>
+            <h3><span t-esc="submitted_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Won</h5>
+            <h3><span t-esc="won_tenders"/></h3>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card shadow rounded p-3 bg-light">
+            <h5>Lost</h5>
+            <h3><span t-esc="lost_tenders"/></h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card p-3">
+            <h5 class="text-center">Tenders by Category</h5>
+            <canvas id="categoryChart" width="100%" height="300"></canvas>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card p-3">
+            <h5 class="text-center">Tenders by Status</h5>
+            <canvas id="statusChart" width="100%" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Chart(document.getElementById('categoryChart'), {
+          type: 'bar',
+          data: {
+            labels: ['Works', 'Goods', 'Services', 'Consultancy'],
+            datasets: [{
+              label: 'Count',
+              data: [12, 9, 5, 3],
+              backgroundColor: ['#1abc9c', '#3498db', '#f39c12', '#e74c3c'],
+            }]
+          },
+          options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('statusChart'), {
+          type: 'pie',
+          data: {
+            labels: ['Draft', 'Active', 'Submitted', 'Won', 'Lost'],
+            datasets: [{
+              data: [5, 10, 8, 4, 2],
+              backgroundColor: ['#95a5a6', '#2ecc71', '#f1c40f', '#27ae60', '#c0392b'],
+            }]
+          },
+          options: { responsive: true }
+        });
+      });
+    </script>
+  </template>
+</odoo>
